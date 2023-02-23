@@ -92,3 +92,4 @@ class Medicamento:
     def asignarDosis(self,med):
         self.__dosis = med 
         
+        
