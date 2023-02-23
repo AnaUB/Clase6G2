@@ -47,6 +47,7 @@ class sistemaV:
     def __init__(self):
         #self.__lista_mascotas = []
         # self.__lista_mascotas = {}
+        
         self.__lista_caninos = {}
         self.__lista_felinos = {}
 
@@ -89,12 +90,12 @@ class sistemaV:
         for masc in self.__lista_caninos or self.__lista_felinos:
             if historia == masc.verHistoria():
                 if masc in self.__lista_caninos:
-                     # del self.__lista_mascotas[masc]
-                    self.__lista_caninos.remove(masc)  #opcion con el pop
+                    #del self.__lista_mascotas[masc]
+                    del self.__lista_caninos[masc]  #opcion con el pop
                     return True  #eliminado con exito
                 if masc in self.__lista_felinos:
-                    self.__lista_felinos.remove(masc)
-
+                    del self.__lista_felinos[masc]
+                    return True
         return False 
 
     def eliminarMedicamneto(self, historia):

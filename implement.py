@@ -14,7 +14,7 @@ def main():
                        \nUsted ingresó la opción: ''' ))
 
         if menu == 1:
-            if servicio_hospitalario.verNumeroMascotas() >= 14:
+            if servicio_hospitalario.verNumeroCaninos() + servicio_hospitalario.verNumeroFelinos() >= 14:
                 print("No hay espacio disponible...")
                 continue
             historia = int(input(" ingrese la historia clinica de la mascota: "))
@@ -55,11 +55,11 @@ def main():
                         fecha = datetime.datetime(f"{año},{mes},{dia}")
                         cantidad = int(input("¿Cuántos medicamentos le suministra a la mascota?"))
                         med_ind = []
-                        for i in range(0, cantidad)):
+                        for i in range(0, cantidad):
                             medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
                             medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
                             medicamento=Medicamento()
-                            med_ind,append(medicamento)
+                            med_ind.append(medicamento)
                         mas = Mascota()
                         mas.asignarNombre(nombre)
                         mas.asignarHistoria(historia)
@@ -84,7 +84,7 @@ def main():
                 print("La historia clínica ingresada no corresponde con ninguna mascota en el sistema.")
           
         elif menu==3: # Ver número de mascotas en el servicio 
-            numero=servicio_hospitalario.verNumeroMascotas()
+            numero = servicio_hospitalario.verNumeroCaninos() + servicio_hospitalario.verNumeroFelinos()
             print("El número de pacientes en el sistema es: " + str(numero))
 
         elif menu==4:
@@ -106,7 +106,7 @@ def main():
         elif menu == 6: #Eliminar medicamento
             n = int(input("Ingrese la historia clínica de la mascota: "))
             resultado_operacion2 = servicio_hospitalario.eliminarMedicamneto(n)
-            if resultado operacion2 == True:
+            if resultado_operacion2 == True:
                 print("Medicamento eliminado del sistema con exito")
             else:
                 print("No se ha podido eliminar el medicamento")
